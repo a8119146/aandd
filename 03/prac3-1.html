@@ -11,6 +11,15 @@
     <script>
         function runButtonPressed() {
             //prac3-1 10個の乱数の合計を求める（繰り返しで）
+            var x = 0;
+            var numbers = [];
+            for (var i = 0; i < 10; i++) {
+                y = Math.floor(Math.random() * 10 + 1)
+                numbers.push(y);
+                x = x + y;
+            }
+            show(numbers);
+            document.getElementById('plus').innerHTML = x;
             //prac3-2 10個の乱数の平均を求める
             //prac3-3 10個の乱数の最大値を求める
             //prac3-4 10個の乱数の最小値を求める
@@ -23,6 +32,7 @@
     <h1>prac3</h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
+    <p id="plus"></p>
 </body>
 
 </html>
