@@ -10,3 +10,15 @@ function show(array) {
     //document.getElementById('res').innerHTML = html;
     document.getElementById('res').insertAdjacentHTML('beforeend', html);
 }
+
+function createSequentialNumbers(array, n) {
+    for (var i = 0; i < n; i++) {
+        array.push(i);
+    }
+}
+
+function createRandomNumbers(array, n) {
+    for (var i = 0; i < n; i++) {
+        array.push(Math.floor(Math.random() * 10 + 1));
+    }
+}
