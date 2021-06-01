@@ -1,0 +1,31 @@
+<script type="text/javascript" src="../aandd.js"></script>
+<script type="text/javascript" src="../jquery.min.js"></script>
+
+<script>
+    function runButtonPressed() {
+        var numbers = [];
+        for (var i = 0; i < 5; i++) {
+            y = Math.floor(Math.random() * 10 + 1)
+            numbers.push(y);
+        }
+        show(numbers);
+        var numbers2 = [];
+        for (var i = 0; i < 5; i++) {
+            if (numbers[i] >= 3) {
+                numbers2.push(numbers[i]);
+            }
+        }
+        show(numbers2);
+    }
+</script>
+
+</head>
+
+<body>
+    <h1>prac3</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+    <p id="plus"></p>
+</body>
+
+</html>
