@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            createOrderedRandomNumbers(numbers, 20);
+            show(numbers);
+            var x = 25;
+            var lower = 0;
+            var upper = 19;
+            for (var i = 0; i < 20; i++) {
+                var mid = Math.floor((lower + upper) / 2);
+                if (numbers[mid] == 25) {
+                    document.getElementById('doko').innerHTML = "numbers[" + mid + "]";
+                    break;
+                }
+                else if (numbers[mid] > 25) {
+                    upper = mid;
+                }
+                else if (numbers[mid] < 25) {
+                    lower = mid;
+                }
+                if (upper <= lower + 1) {
+                    document.getElementById('doko').innerHTML = "見つかりませんでした";
+                    break;
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>ex4-4</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+    <p id="doko"></p>
+</body>
+
+</html>
