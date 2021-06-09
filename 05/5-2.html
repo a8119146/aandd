@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var x = 0;
+            var numbers = [];
+            for (var i = 0; i < 10; i++) {
+                y = Math.floor(Math.random() * 10 + 1)
+                numbers.push(y);
+            }
+            show(numbers);
+            var z = 0;
+            var y = 0;
+            for (k = 0; k < 10; k++) {
+                y = k
+                var x = 1000;
+                var min_index = 0;
+                for (var i = 0; i < 10; i++) {
+                    if (x > numbers[y]) {
+                        x = numbers[y];
+                        min_index = y
+                        y = y + 1;
+                    }
+                    else if (x <= numbers[y]) {
+                        y = y + 1;
+                    }
+                }
+                var m = numbers[z];
+                numbers[z] = numbers[min_index];
+                numbers[min_index] = m;
+                z = z + 1;
+                show(numbers);
+            }
+
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac5</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+    <p id="plus"></p>
+</body>
+
+</html>
