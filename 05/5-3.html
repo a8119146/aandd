@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var x = 0;
+            var numbers = [];
+            for (var i = 0; i < 10; i++) {
+                y = Math.floor(Math.random() * 10 + 1)
+                numbers.push(y);
+            }
+            show(numbers);
+
+            var mark = 1
+            var x = numbers[0]
+            for (var i = 10; i < 10; i++) {
+                if (x > numbers[mark]) {
+                    for ()
+                        var z = x;
+                    x = numbers[mark];
+                    numbers[mark] = z;
+                    mark = mark + 1;
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac5</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+    <p id="plus"></p>
+</body>
+
+</html>
