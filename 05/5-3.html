@@ -18,15 +18,13 @@
             }
             show(numbers);
 
-            var mark = 1
-            var x = numbers[0]
-            for (var i = 10; i < 10; i++) {
-                if (x > numbers[mark]) {
-                    for ()
-                        var z = x;
-                    x = numbers[mark];
-                    numbers[mark] = z;
-                    mark = mark + 1;
+            var y = numbers[0];
+            for (var i = 0; i < numbers2.length; i++) {
+                if (numbers2[i] > x) {
+                    for (var j = numbers2.length - 1; j >= i; j--) {
+                        numbers2[j + 1] = numbers2[j];
+
+                    }
                 }
             }
         }
