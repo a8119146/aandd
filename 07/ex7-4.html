@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var replies = {};
+
+        function teachButtonPressed() {
+            var remark = document.getElementById('tf3').value;
+            var reply = document.getElementById('tf4').value;
+            replies[remark] = reply;
+            localStorage.setItem('発言', JSON.stringify(replies));
+        }
+
+        function remarkButtonPressed() {
+            var remark = document.getElementById('tf1').value;
+            var x = localStorage.getItem('発言');
+            replies = JSON.parse(x);
+            var reply = replies[remark]
+            if (reply == null) {
+                document.getElementById('tf2').value = '答えがわからないのーん';
+            }
+            else {
+                document.getElementById('tf2').value = reply;
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>butシステムアヤノちゃん</h1>
+    あなた：<input id="tf1" type="text" value="">
+    <button onclick="remarkButtonPressed()">発言!</button>
+    <br>
+    コンピュータ：<input id="tf2" type="text" value="">
+    <h1>教える</h1>
+    発言：<input id="tf3" type="text" value="">
+    <br>
+    返答：<input id="tf4" type="text" value="">
+    <button onclick="teachButtonPressed()">教える!</button>
+    <p id="res"></p>
+</body>
+
+</html>
