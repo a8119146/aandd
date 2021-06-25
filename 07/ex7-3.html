@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var profiles = {};
+
+        function registerButtonPressed() {
+            var name = document.getElementById('tf3').value;
+            var birthday = document.getElementById('tf4').value;
+            profiles[name] = birthday;
+            profiles[birthday] = name;
+        }
+
+        function runButtonPressed() {
+            var name = document.getElementById('tf1').value;
+            var birthday = profiles[name];
+            if (birthday == null) {
+                document.getElementById('tf2').value = '答えがわからないのーん';
+            }
+            else {
+                document.getElementById('tf2').value = birthday;
+            }
+        }
+
+        function runButton2Pressed() {
+            var birthday = document.getElementById('tf5').value;
+            var name = profiles[birthday];
+            if (name == null) {
+                document.getElementById('tf6').value = '答えがわからないのーん';
+            }
+            else {
+                document.getElementById('tf6').value = name;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>登録</h1>
+    名前：<input id="tf3" type="text" value="">
+    <br>
+    誕生日：<input id="tf4" type="text" value="">
+    <button onclick="registerButtonPressed()">登録!</button>
+    <h1>名前から検索</h1>
+    名前：<input id="tf1" type="text" value="">
+    <br>
+    誕生日：<input id="tf2" type="text" value="">
+    <button onclick="runButtonPressed()">検索!</button>
+    <h1>誕生日から検索</h1>
+    誕生日：<input id="tf5" type="text" value="">
+    <br>
+    名前：<input id="tf6" type="text" value="">
+    <button onclick="runButton2Pressed()">検索!</button>
+    <p id="res"></p>
+</body>
+
+</html>
