@@ -15,8 +15,8 @@
             document.getElementById('res').innerHTML = JSON.stringify(studentsB, null, '\t');
 
             var studentsC = [];
-            var keys = object.keys(studentsB);
-            for (var i = 0; i < key.length; i++) {
+            var keys = Object.keys(studentsB);
+            for (var i = 0; i < keys.length; i++) {
                 var key = keys[i];
                 var student = {};
                 student.name = key;
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <h1>ex8-1</h1>
+    <h1>8-1</h1>
     <button onclick="runButtonPressed()">run!</button>
     <pre id="res"></pre>
 </body>
