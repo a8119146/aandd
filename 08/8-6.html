@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../osql.js"></script>
+
+    <script>
+        osql.requireLogin();
+
+        async function runButtonPressed() {
+            var objects = await osql.connect('select * from Students;');
+            var birthdays = {};
+            var students = []
+            for (i = 0; i < objects.length; i++) {
+                var birthday = objects[i].birthday
+                if (birthdays[birthday]) {
+                    students[i] = objects[i].name;
+                    birhtdays[birthday] = students[i]
+
+                }
+                else {
+                    birthdays[birthday] = students[i]
+                }
+                document.getElementById('res').innerHTML = JSON.stringify(birthdays, null, '\t');
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>8-6</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <pre id="res"></pre>
+</body>
+
+</html>
